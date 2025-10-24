@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechCorp Solutions - Your Technology Partner</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>TechCorp Solutions</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Transform Your Business with Technology</h2>
+                <p>We provide cutting-edge software solutions, cloud services, and digital transformation consulting to help your business thrive in the digital age.</p>
+                <div class="hero-buttons">
+                    <a href="localhost:8000/services" class="btn btn-primary">Our Services</a>
+                    <a href="localhost:8000/contact" class="btn btn-secondary">Get Started</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h3>Why Choose TechCorp?</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-cloud"></i>
+                        <h4>Cloud Solutions</h4>
+                        <p>Scalable cloud infrastructure and migration services to optimize your business operations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h4>Mobile Development</h4>
+                        <p>Custom mobile applications for iOS and Android that engage your customers.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Cybersecurity</h4>
+                        <p>Comprehensive security solutions to protect your data and systems from threats.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Analytics & AI</h4>
+                        <p>Data analytics and AI solutions to drive insights and automate processes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h4>500+</h4>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>200+</h4>
+                        <p>Happy Clients</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>10+</h4>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>24/7</h4>
+                        <p>Support Available</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>TechCorp Solutions</h4>
+                    <p>Leading provider of technology solutions for modern businesses.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@techcorp.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Silicon Valley, CA</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechCorp Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-toggle" id="chatToggle">
+            <i class="fas fa-comments"></i>
+            <span class="chat-badge">Need Help?</span>
+        </div>
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <h4>Customer Support</h4>
+                <button class="chat-close" id="chatClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <p>Hi! I'm here to help you find information about our services and products. What can I help you with today?</p>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Ask me anything..." autocomplete="off">
+                <button id="sendButton">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/script.js"></script>
+</body>
+</html>
