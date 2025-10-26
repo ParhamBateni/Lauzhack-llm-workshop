@@ -2,6 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from dotenv import load_dotenv
+import os
 
 app = FastAPI()
 
@@ -16,6 +17,7 @@ app.add_middleware(
 
 
 load_dotenv()
+openai_key = os.getenv("OPENAI_API_KEY") # put your openai key here as a string. Example: "sk-proj-1234567890"
 
 @app.post("/chat")
 async def process_chat_message(request: Request):
