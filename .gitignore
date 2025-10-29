@@ -1,5 +1,5 @@
 pyrightconfig.json
 .venv
-.env
+real.env
 .DS_Store
 .vscode
