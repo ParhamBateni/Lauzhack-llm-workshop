@@ -2,7 +2,6 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from dotenv import load_dotenv
-import os
 
 app = FastAPI()
 
@@ -17,14 +16,34 @@ app.add_middleware(
 
 
 load_dotenv()
-openai_key = os.getenv("OPENAI_API_KEY") # put your openai key here as a string. Example: "sk-proj-1234567890"
+from openai import OpenAI
+client = OpenAI()
 
+# You can also use the InferenceClient from Hugging Face to use the gpt-oss-20b model in case you don't have access to the OpenAI API and have only a Hugging Face API key
+# from huggingface_hub import InferenceClient
+# client = InferenceClient("openai/gpt-oss-20b")
+
+from llama_index.core import SimpleDirectoryReader, VectorStoreIndex
+document = SimpleDirectoryReader("frontend/static_pages").load_data()
+index = VectorStoreIndex.from_documents(document)
+retriever = index.as_retriever()
+
+system_prompt = "You are a helpful assistant that can answer questions and help with tasks. You are only allowed to answer questions using the context provided to you. In case you are not sure about the answer just reply back by saying 'I don't know"
 @app.post("/chat")
 async def process_chat_message(request: Request):
     try:
         data = await request.json()
-        # TODO: add the code here to process the chat message and return the response
-        return {"response": {f'Recieved data: {data}'}}
+        message = data["message"]
+        context = retriever.retrieve(message)
+        print(context)
+        response = client.chat.completions.create(
+            model="gpt-4",
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": "Context: " + str(context) + "\n\n" + "Users questions: " + message}
+            ]
+        )
+        return {"response": response.choices[0].message.content}
             
     except Exception as e:
         print(f"Error in chat completion: {str(e)}")

@@ -3,4 +3,6 @@ pyrightconfig.json
 real.env
 .DS_Store
 .vscode
+.idea
 practices_solution.ipynb
+backend/server_solution.py
